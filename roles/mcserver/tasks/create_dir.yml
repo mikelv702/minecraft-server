@@ -4,7 +4,7 @@
   ansible.builtin.file:
     path: /data/minecraft/{{ MCSERVER_NAME }}
     state: directory
-    mode: '0755'
+    mode: '0775'
     owner: mcuser
     group: minecraft
 

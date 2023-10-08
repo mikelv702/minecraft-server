@@ -1,5 +1,6 @@
 ---
 - name: UPDATE PLUGIN | Update EssentialsX
+  become: true
   ansible.builtin.copy:
     src: essentials_config.yml
     dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins/Essentials/config.yml
@@ -7,6 +8,7 @@
     group: minecraft
   notify: restart minecraft
 - name: UPDATE PLUGIN | Update LuckPerms
+  become: true
   ansible.builtin.copy:
     src: luckperms_config.yml
     dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins/LuckPerms/config.yml

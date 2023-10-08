@@ -27,9 +27,11 @@
 
 # 7. Start Service
 - name: Start Minecraft
+  become: true
   ansible.builtin.service:
     name: minecraft-{{ MCSERVER_NAME }}.service
     state: started
+
 
 - name: Wait for Minecraft
   ansible.builtin.pause:

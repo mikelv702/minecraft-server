@@ -2,39 +2,43 @@
 - name: PLUGINS | Install Vault
   ansible.builtin.get_url:
     url: "{{ VAULTPLUGIN.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins
     mode: '0440'
     owner: mcuser
     group: minecraft
+  notify: restart minecraft
 
 - name: PLUGINS | Install LuckPerms
   ansible.builtin.get_url:
     url: "{{ LUCKYPERMSPLUGIN.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins
     mode: '0440'
     owner: mcuser
     group: minecraft
-
+  notify: restart minecraft
 - name: PLUGINS | Install EssentialsX
   ansible.builtin.get_url:
     url: "{{ ESSENTIALSX.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins
     mode: '0440'
     owner: mcuser
     group: minecraft
+  notify: restart minecraft
 
 - name: PLUGINS | Install EssentialsXChat
   ansible.builtin.get_url:
     url: "{{ ESSENTIALSXCHAT.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins
     mode: '0440'
     owner: mcuser
     group: minecraft
+  notify: restart minecraft
 
 - name: PLUGINS | Install EssentialsXSpawn
   ansible.builtin.get_url:
     url: "{{ ESSENTIALSXSPAWN.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/plugins
     mode: '0440'
     owner: mcuser
     group: minecraft
+  notify: restart minecraft
