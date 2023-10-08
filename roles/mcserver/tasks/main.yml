@@ -13,14 +13,18 @@
   become: true
   ansible.builtin.import_tasks: create_dir.yml
 # 4. Download PaperMC JAR & Accept EULA
-- name: Create Folders
+- name: INSTALL PAPER MC
   become: true
   ansible.builtin.import_tasks: install_papermc.yml
 # 5. Smile
 # 6. Install as a Service
-- name: Create Folders
+- name: Create Service for Server
   become: true
   ansible.builtin.import_tasks: create_service.yml
+
+- name: "Flush handlers"
+  meta: flush_handlers
+
 # 7. Start Service
 - name: Start Minecraft
   ansible.builtin.service:
@@ -30,6 +34,7 @@
 - name: Wait for Minecraft
   ansible.builtin.pause:
     minutes: 2
+
 # 8. Install Plugins (Vault, LuckPerms, EssentialsX, EssentialsXChat, EssentialsXSpawn)
 - name: Install Plugins
   become: true
@@ -42,10 +47,10 @@
 - name: Wait for Minecraft
   ansible.builtin.pause:
     minutes: 2   
+
 # 10. Update Config Files
 - name: Update Plugin Config
   ansible.builtin.import_tasks: update_plugin_config.yml
   
-
 # 11. Restart Service
 

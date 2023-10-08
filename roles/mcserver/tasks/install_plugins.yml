@@ -18,7 +18,7 @@
 - name: PLUGINS | Install EssentialsX
   ansible.builtin.get_url:
     url: "{{ ESSENTIALSX.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/minecraft_server_{{PAPERMC.version}}.jar
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/
     mode: '0440'
     owner: mcuser
     group: minecraft
@@ -26,7 +26,7 @@
 - name: PLUGINS | Install EssentialsXChat
   ansible.builtin.get_url:
     url: "{{ ESSENTIALSXCHAT.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/minecraft_server_{{PAPERMC.version}}.jar
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/
     mode: '0440'
     owner: mcuser
     group: minecraft
@@ -34,7 +34,7 @@
 - name: PLUGINS | Install EssentialsXSpawn
   ansible.builtin.get_url:
     url: "{{ ESSENTIALSXSPAWN.url }}"
-    dest: /data/minecraft/{{ MCSERVER_NAME }}/minecraft_server_{{PAPERMC.version}}.jar
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/
     mode: '0440'
     owner: mcuser
     group: minecraft
