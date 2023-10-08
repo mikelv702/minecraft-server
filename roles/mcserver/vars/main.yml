@@ -1,0 +1,28 @@
+---
+# vars file for mcserver
+MCSERVER_NAME: 'dev'
+
+PAPERMC : {
+  url: 'https://api.papermc.io/v2/projects/paper/versions/1.20.2/builds/217/downloads/paper-1.20.2-217.jar',
+  version: '1.20.2'
+}
+ESSENTIALSX: {
+  url: 'https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar', 
+  version: '2.20.1'
+}
+ESSENTIALSXCHAT: {
+  url: 'https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXChat-2.20.1.jar', 
+  version: '2.20.1'
+}
+ESSENTIALSXSPAWN: {
+  url: 'https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXSpawn-2.20.1.jar', 
+  version: '2.20.1'
+}
+VAULTPLUGIN: {
+  url: 'https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar', 
+  version: '1.7.3'
+}
+LUCKYPERMSPLUGIN: {
+  url: 'https://download.luckperms.net/1517/bukkit/loader/LuckPerms-Bukkit-5.4.104.jar', 
+  version: '5.4.104'
+}

@@ -1,0 +1,5 @@
+- name: Install Minecraft Server
+  hosts: minecraft
+  #remote_user: ansible
+  roles:
+    - mcserver

@@ -1,0 +1,13 @@
+---
+- name: INSTALL JAVA | Add java repo
+  ansible.builtin.apt_repository:
+    repo: ppa:openjdk-r/ppa
+
+- name: INSTALL JAVA | Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: INSTALL JAVA | Install Java 17
+  ansible.builtin.apt:
+    name: openjdk-17-jre-headless
+    state: present

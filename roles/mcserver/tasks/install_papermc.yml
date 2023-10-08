@@ -1,0 +1,17 @@
+---
+- name: INSTALL PAPERMC | Download PaperMC
+  ansible.builtin.get_url:
+    url: "{{ PAPERMC.url }}"
+    dest: /data/minecraft/{{ MCSERVER_NAME }}/minecraft_server_{{PAPERMC.version}}.jar
+    mode: '0440'
+    owner: mcuser
+    group: minecraft
+
+- name: INSTALL PAPERMC | Accept EULA
+  ansible.builtin.copy:
+   src: eula.txt
+   dest: /data/minecraft/{{ MCSERVER_NAME }}/eula.txt
+   mode: '0755'
+   owner: mcuser
+   group: minecraft
+

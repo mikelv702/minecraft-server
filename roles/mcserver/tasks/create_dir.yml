@@ -1,0 +1,11 @@
+---
+
+- name: DATA DIRECTORY | Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /data/minecraft/{{ MCSERVER_NAME }}
+    state: directory
+    mode: '0755'
+    owner: mcuser
+    group: minecraft
+
+

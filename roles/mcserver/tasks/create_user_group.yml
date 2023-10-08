@@ -1,0 +1,12 @@
+---
+- name: CREATE USER | Create minecraft group
+  ansible.builtin.group:
+    name: minecraft
+    state: present
+
+- name: CREATE USER | Create mcuser 
+  ansible.builtin.user:
+    system: true
+    name: mcuser
+    group: minecraft
+    create_home: false

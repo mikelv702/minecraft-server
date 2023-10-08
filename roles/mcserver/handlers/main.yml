@@ -1,0 +1,9 @@
+---
+# handlers file for mcserver
+- name: reload systemctl
+  become: true
+  ansible.builtin.command: systemctl daemon-reload
+
+- name: restart minecraft
+  become: true
+  ansible.builtin.command: systemctl restart minecraft-{{ MCSERVER_NAME }}.service
